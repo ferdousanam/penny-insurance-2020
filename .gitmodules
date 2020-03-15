@@ -1,0 +1,3 @@
+[submodule "metronic-dashboard"]
+	path = metronic-dashboard
+	url = https://github.com/ferdousanam/metronic-dashboard-package.git
