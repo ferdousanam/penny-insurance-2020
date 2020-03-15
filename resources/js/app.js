@@ -5,8 +5,14 @@
  */
 
 require('./bootstrap');
+require('./plugins');
 
 window.Vue = require('vue');
+import Loading from 'vue-loading-overlay';
+window.Vue.use(Loading, {
+    container: null,
+    color: 'green',
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,6 +33,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+/*const app = new Vue({
     el: '#app',
-});
+});*/
