@@ -11,5 +11,22 @@ const mix = require('laravel-mix');
  |
  */
 
+if (mix.inProduction()) {
+    mix.options({
+        terser: {
+            terserOptions: {
+                compress: {
+                    drop_console: true
+                }
+            }
+        }
+    });
+}
+
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+    .scripts([
+        'public/vendor/dashboard/assets/js/kt-global.js',
+        'public/vendor/dashboard/assets/plugins/global/plugins.bundle.js',
+        'public/vendor/dashboard/assets/js/scripts.bundle.js',
+    ], 'public/js/all.js');
